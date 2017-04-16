@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- CSS (load bootstrap) -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/sidemenu.css">
+
+    <style>
+        .navbar { border-radius:0; }
+    </style>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+
+
+    <script src="app.js"></script>
+    <script src="/assets/js/sidemenu.controller.js"></script>
+
+</head>
+
+<!-- apply our angular app to our site -->
+<body ng-app="routerApp">
+
+
+
+<div id="rootApp">
+
+    <div ng-include="'/assets/html/sidemenu.client.view.html'" class="sidemenu sidemenu-inverse"></div>
+
+
+
+    <!-- Root App -->
+    <div class="main-content">
+        <div class="container-fluid">
+
+
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="about">About</a></li>
+            </ul>
+            </nav>
+
+
+            <div ui-view></div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+</body>
+</html>
