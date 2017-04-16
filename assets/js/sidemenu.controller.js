@@ -18,7 +18,106 @@
 
         var menu = '{"roles":["*"],"items":[{"title":"Menu1","state":"home1","type":"item","roles":["user","admin"],"position":0,"items":[],"$$hashKey":"object:22"},{"title":"Home","state":"home","type":"dropdown","roles":["admin"],"position":0,"items":[{"title":"Manage Micro Apps","state":"home.list","params":{},"roles":["admin"],"position":0},{"title":"Manage Users","state":"home.paragraph","params":{},"roles":["admin"],"position":0}],"$$hashKey":"object:23"},{"title":"Micro Apps","state":"microapps","type":"dropdown","roles":["*"],"position":0,"items":[{"title":"List Micro Apps","state":"microapps.list","params":{},"roles":["*"],"position":0,"$$hashKey":"object:36"}],"$$hashKey":"object:24","isCollapsed":true}]}';
 
-        vm.menu = JSON.parse(menu);
+        // vm.menu = JSON.parse(menu);
+
+        vm.menu = {
+            roles: [
+                "*"
+            ],
+                items: [
+            {
+                title: "Dashboard",
+                state: "dashboard",
+                type: "item",
+                roles: [
+                    "user",
+                    "admin"
+                ],
+                position: 0,
+                items: []
+            },
+            {
+                title: "Menu1",
+                state: "menu1",
+                type: "dropdown",
+                roles: [
+                    "admin"
+                ],
+                position: 0,
+                items: [
+                    {
+                        title: "Menu1 Home",
+                        state: "menu1",
+                        params: {},
+                        roles: [
+                            "admin"
+                        ],
+                        position: 0
+                    },
+                    {
+                        title: "Sub Menu1",
+                        state: "menu1.submenu1",
+                        params: {},
+                        roles: [
+                            "admin"
+                        ],
+                        position: 0
+                    },
+                    {
+                        title: "Sub Menu2",
+                        state: "menu1.submenu2",
+                        params: {},
+                        roles: [
+                            "admin"
+                        ],
+                        position: 0
+                    }
+                ]
+            },
+            {
+                title: "Menu2",
+                state: "menu2",
+                type: "dropdown",
+                roles: [
+                    "*"
+                ],
+                position: 0,
+                items: [
+                    {
+                        title: "Menu2 Home",
+                        state: "menu2",
+                        params: {},
+                        roles: [
+                            "*"
+                        ],
+                        position: 0
+                    },
+                    {
+                        title: "Sub Menu1",
+                        state: "menu2.submenu1",
+                        params: {},
+                        roles: [
+                            "*"
+                        ],
+                        position: 0
+                    }
+                ],
+                isCollapsed: true
+            },
+            {
+                title: "Multi View",
+                state: "multiview",
+                type: "item",
+                roles: [
+                    "user",
+                    "admin"
+                ],
+                position: 0,
+                items: []
+            }
+
+        ]
+        };
 
 
         vm.authentication = {};

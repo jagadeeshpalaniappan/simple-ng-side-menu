@@ -16,13 +16,11 @@
 
         <ul class="smenu">
 
-            <li ng-class="{'active': $state.includes('home')}"><a ui-sref="home"><span class="glyphicon glyphicon-home"></span>
-                <span ng-hide="vm.isSideMenuClosed">Home1</span>
-
-            </a></li>
-            <li ng-class="{'active': $state.includes('about')}"><a ui-sref="about"><span class="glyphicon glyphicon-home"></span>
-                <span ng-hide="vm.isSideMenuClosed">About</span>
-            </a></li>
+            <li ng-class="{'active': $state.includes('home')}">
+                <a ui-sref="home"><span class="glyphicon glyphicon-home"></span>
+                    <span ng-hide="vm.isSideMenuClosed">Home</span>
+                </a>
+            </li>
 
         </ul>
 
@@ -56,10 +54,9 @@
                 </ul>
 
 
-                <a ng-switch-default  ui-sref="{{item.state}}">
+                <a ng-switch-default ui-sref="{{item.state}}">
 
-<span class="glyphicon glyphicon-heart"
-        ></span>
+                    <span class="glyphicon glyphicon-heart"></span>
 
                     <span ng-hide="vm.isSideMenuClosed"> {{item.title}} </span>
 
@@ -70,49 +67,49 @@
     </div>
 
 
-        <ul class="smenu sidemenu-footer" ng-if="false">
-            <li ui-sref-active="active">
-                <a href="#">
-                    <span class="glyphicon glyphicon-user"></span>
-                    <span ng-hide="vm.isSideMenuClosed">Sign Up</span></a>
-            </li>
-            <li class="divider-vertical"></li>
-            <li ui-sref-active="active">
-                <a href="#">
-                    <span class="glyphicon glyphicon-log-in"></span>
-                    <span ng-hide="vm.isSideMenuClosed">Sign In</span>
-                </a>
-            </li>
-        </ul>
+    <ul class="smenu sidemenu-footer" ng-if="false">
+        <li ui-sref-active="active">
+            <a href="#">
+                <span class="glyphicon glyphicon-user"></span>
+                <span ng-hide="vm.isSideMenuClosed">Sign Up</span></a>
+        </li>
+        <li class="divider-vertical"></li>
+        <li ui-sref-active="active">
+            <a href="#">
+                <span class="glyphicon glyphicon-log-in"></span>
+                <span ng-hide="vm.isSideMenuClosed">Sign In</span>
+            </a>
+        </li>
+    </ul>
 
 
-        <ul class="smenu sidemenu-footer">
-            <li ng-init="vm.accountMenu.isCollapsed=true">
+    <ul class="smenu sidemenu-footer">
+        <li ng-init="vm.accountMenu.isCollapsed=true">
 
 
-                <a role="button" title="{{::vm.authentication.user.displayName}}"
-                   ng-click="vm.toggleDropDown(vm.accountMenu)">
+            <a role="button" title="{{::vm.authentication.user.displayName}}"
+               ng-click="vm.toggleDropDown(vm.accountMenu)">
 
-                    <img src="/assets/img/default.png" alt="{{vm.authentication.user.displayName}}"
-                         class="header-profile-image-mini"/>
+                <img src="/assets/img/default.png" alt="{{vm.authentication.user.displayName}}"
+                     class="header-profile-image-mini"/>
 
-                    <span ng-hide="vm.isSideMenuClosed">{{ vm.authentication.user.displayName }}</span>
+                <span ng-hide="vm.isSideMenuClosed">{{ vm.authentication.user.displayName }}</span>
 
-                </a>
+            </a>
 
 
-                <ul uib-collapse="vm.isDropDownCollapsed(vm.accountMenu)">
-                    <li ui-sref-active="active" ng-repeat="item in vm.accountMenu.items"
-                        ng-class="{'active': $state.includes(item.state)}">
-                        <a ui-sref="{{item.state}}" ng-hide="vm.isSideMenuClosed">{{::item.title}}</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="/api/auth/signout" target="_self" ng-hide="vm.isSideMenuClosed">Signout</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+            <ul uib-collapse="vm.isDropDownCollapsed(vm.accountMenu)">
+                <li ui-sref-active="active" ng-repeat="item in vm.accountMenu.items"
+                    ng-class="{'active': $state.includes(item.state)}">
+                    <a ui-sref="{{item.state}}" ng-hide="vm.isSideMenuClosed">{{::item.title}}</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#" ng-hide="vm.isSideMenuClosed">Signout</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
 
 
 </div>
